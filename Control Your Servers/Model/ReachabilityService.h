@@ -2,7 +2,7 @@
 //  ReachabilityService.h
 //  Control Your Servers
 //
-//  Created by Aleksey on 10/8/16.
+//  Created by Aleksey on 10/9/16.
 //  Copyright © 2016 Aleksey. All rights reserved.
 //
 

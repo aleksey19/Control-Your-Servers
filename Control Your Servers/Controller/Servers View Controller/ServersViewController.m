@@ -7,11 +7,14 @@
 //
 
 #import "ServersViewController.h"
+#import "ServerModel.h"
 
 @interface ServersViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray *servers;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+
+@property (nonatomic, strong) NSMutableArray <ServerModel*> *servers;
 
 @end
 

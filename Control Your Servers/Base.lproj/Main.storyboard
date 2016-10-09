@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HDx-MI-mLI">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,17 +21,27 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zed-hh-njS">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VhC-LE-YEX">
+                                <segments>
+                                    <segment title="Servers"/>
+                                    <segment title="Graphs"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Zed-hh-njS" secondAttribute="bottom" id="Fx7-vc-d9e"/>
-                            <constraint firstAttribute="trailing" secondItem="Zed-hh-njS" secondAttribute="trailing" id="H6x-ph-gbU"/>
-                            <constraint firstItem="Zed-hh-njS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="plQ-ai-7rG"/>
-                            <constraint firstItem="Zed-hh-njS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zfe-yz-dcV"/>
+                            <constraint firstAttribute="trailing" secondItem="Zed-hh-njS" secondAttribute="trailing" id="6DN-Vy-Mi2"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Zed-hh-njS" secondAttribute="bottom" id="EIc-Ip-LD0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VhC-LE-YEX" secondAttribute="trailing" constant="70" id="KMk-na-zXP"/>
+                            <constraint firstItem="VhC-LE-YEX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="T3a-3g-DNp"/>
+                            <constraint firstItem="VhC-LE-YEX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="71" id="kDW-2M-H2I"/>
+                            <constraint firstItem="Zed-hh-njS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vpC-1W-tin"/>
+                            <constraint firstItem="Zed-hh-njS" firstAttribute="top" secondItem="VhC-LE-YEX" secondAttribute="bottom" constant="8" id="xV2-Pd-2UN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WDi-aH-z81"/>
                     <connections>
+                        <outlet property="segmentedControl" destination="VhC-LE-YEX" id="2Uz-dC-tJl"/>
                         <outlet property="tableView" destination="Zed-hh-njS" id="7eb-Kz-8HR"/>
                     </connections>
                 </viewController>

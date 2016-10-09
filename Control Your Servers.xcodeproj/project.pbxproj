@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B4AC9A61DAA1D8A0018019C /* ServerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B4AC9A51DAA1D8A0018019C /* ServerModel.m */; };
+		5B4AC9A91DAA1F7C0018019C /* ReachabilityService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B4AC9A81DAA1F7B0018019C /* ReachabilityService.m */; };
 		5BBD60F21DA8F14E004C3BB9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBD60F11DA8F14E004C3BB9 /* AppDelegate.m */; };
 		5BBD60F81DA8F14E004C3BB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BBD60F61DA8F14E004C3BB9 /* Main.storyboard */; };
 		5BBD60FA1DA8F14E004C3BB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BBD60F91DA8F14E004C3BB9 /* Assets.xcassets */; };
@@ -14,10 +16,13 @@
 		5BBD61111DA8F2C8004C3BB9 /* ServersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBD61101DA8F2C8004C3BB9 /* ServersViewController.m */; };
 		5BBD61121DA8F45B004C3BB9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5BBD61071DA8F231004C3BB9 /* Info.plist */; };
 		5BBD61131DA8F4E6004C3BB9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBD61081DA8F231004C3BB9 /* main.m */; };
-		5BBD61161DA8F6F6004C3BB9 /* ReachabilityService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBD61151DA8F6F6004C3BB9 /* ReachabilityService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B4AC9A41DAA1D8A0018019C /* ServerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerModel.h; sourceTree = "<group>"; };
+		5B4AC9A51DAA1D8A0018019C /* ServerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerModel.m; sourceTree = "<group>"; };
+		5B4AC9A71DAA1F7B0018019C /* ReachabilityService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachabilityService.h; sourceTree = "<group>"; };
+		5B4AC9A81DAA1F7B0018019C /* ReachabilityService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachabilityService.m; sourceTree = "<group>"; };
 		5BBD60EA1DA8F14E004C3BB9 /* Control Your Servers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Control Your Servers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BBD60F01DA8F14E004C3BB9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5BBD60F11DA8F14E004C3BB9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -28,8 +33,6 @@
 		5BBD61081DA8F231004C3BB9 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5BBD610F1DA8F2C8004C3BB9 /* ServersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServersViewController.h; path = "Servers View Controller/ServersViewController.h"; sourceTree = "<group>"; };
 		5BBD61101DA8F2C8004C3BB9 /* ServersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServersViewController.m; path = "Servers View Controller/ServersViewController.m"; sourceTree = "<group>"; };
-		5BBD61141DA8F6F6004C3BB9 /* ReachabilityService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachabilityService.h; sourceTree = "<group>"; };
-		5BBD61151DA8F6F6004C3BB9 /* ReachabilityService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachabilityService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,8 +96,10 @@
 		5BBD610C1DA8F23A004C3BB9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5BBD61141DA8F6F6004C3BB9 /* ReachabilityService.h */,
-				5BBD61151DA8F6F6004C3BB9 /* ReachabilityService.m */,
+				5B4AC9A41DAA1D8A0018019C /* ServerModel.h */,
+				5B4AC9A51DAA1D8A0018019C /* ServerModel.m */,
+				5B4AC9A71DAA1F7B0018019C /* ReachabilityService.h */,
+				5B4AC9A81DAA1F7B0018019C /* ReachabilityService.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -189,10 +194,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B4AC9A61DAA1D8A0018019C /* ServerModel.m in Sources */,
 				5BBD61131DA8F4E6004C3BB9 /* main.m in Sources */,
 				5BBD61111DA8F2C8004C3BB9 /* ServersViewController.m in Sources */,
-				5BBD61161DA8F6F6004C3BB9 /* ReachabilityService.m in Sources */,
 				5BBD60F21DA8F14E004C3BB9 /* AppDelegate.m in Sources */,
+				5B4AC9A91DAA1F7C0018019C /* ReachabilityService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +359,7 @@
 				5BBD61031DA8F14E004C3BB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
