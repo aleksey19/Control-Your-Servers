@@ -26,6 +26,7 @@
                                     <segment title="Servers"/>
                                     <segment title="Graphs"/>
                                 </segments>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -39,7 +40,14 @@
                             <constraint firstItem="Zed-hh-njS" firstAttribute="top" secondItem="VhC-LE-YEX" secondAttribute="bottom" constant="8" id="xV2-Pd-2UN"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="WDi-aH-z81"/>
+                    <navigationItem key="navigationItem" id="WDi-aH-z81">
+                        <barButtonItem key="rightBarButtonItem" image="settings" id="hVc-3P-2Wh">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="settingsBarButtonAction:" destination="BYZ-38-t0r" id="b1K-nk-pcW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="segmentedControl" destination="VhC-LE-YEX" id="2Uz-dC-tJl"/>
                         <outlet property="tableView" destination="Zed-hh-njS" id="7eb-Kz-8HR"/>
@@ -68,4 +76,7 @@
             <point key="canvasLocation" x="301.60000000000002" y="35.532233883058474"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="settings" width="20" height="20"/>
+    </resources>
 </document>

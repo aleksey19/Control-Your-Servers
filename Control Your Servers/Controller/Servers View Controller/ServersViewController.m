@@ -34,6 +34,12 @@
     self.tableView.dataSource = self;
 }
 
+#pragma mark - Actions
+
+- (IBAction)settingsBarButtonAction:(UIButton *)sender {
+    // show settings controller
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
