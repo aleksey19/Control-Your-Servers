@@ -63,13 +63,17 @@
 - (IBAction)saveIntervalConnection:(id)sender {
   
     if (self.connectionPickerCurtainConstraint.constant == 0) {
+        [sender setTitle:@"Done" forState:UIControlStateNormal];
+        
         self.connectionPickerCurtainConstraint.constant = 125;
     }
     else if (self.connectionPickerCurtainConstraint.constant == 125)
     {
-        self.connectionPickerCurtainConstraint.constant = 0;
+        [sender setTitle:@"Change" forState:UIControlStateNormal];
         [NSUserDefaults.standardUserDefaults setInteger:([self.connectionPicker selectedRowInComponent:0 ]+1) forKey:@"interval"];
         self.currentInterval.text = [NSString stringWithFormat:@"Current interval: %@ min",[NSUserDefaults.standardUserDefaults objectForKey:@"interval"]];
+        
+        self.connectionPickerCurtainConstraint.constant = 0;
     }
 
 }
