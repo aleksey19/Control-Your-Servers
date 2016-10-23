@@ -100,9 +100,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="KcQ-Hw-Fw3"/>
                                 </constraints>
-                                <state key="normal" title="Change">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
+                                <state key="normal" title="Change"/>
                                 <connections>
                                     <action selector="saveIntervalConnection:" destination="tMh-FL-UoF" eventType="touchUpInside" id="T6p-wH-34t"/>
                                 </connections>
@@ -113,15 +111,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="T3p-gr-1CP" firstAttribute="width" secondItem="4Nv-zc-4LY" secondAttribute="width" multiplier="3:4" id="BHu-J5-HmR"/>
+                            <constraint firstItem="T3p-gr-1CP" firstAttribute="width" secondItem="4Nv-zc-4LY" secondAttribute="width" multiplier="3:4" constant="-15.25" id="BHu-J5-HmR"/>
                             <constraint firstAttribute="bottom" secondItem="m36-gq-FLu" secondAttribute="bottom" id="HZ5-jZ-eyn"/>
-                            <constraint firstAttribute="trailing" secondItem="vfN-fZ-ggw" secondAttribute="trailing" id="O3Z-L4-LZC"/>
+                            <constraint firstAttribute="trailing" secondItem="vfN-fZ-ggw" secondAttribute="trailing" constant="16" id="O3Z-L4-LZC"/>
                             <constraint firstItem="m36-gq-FLu" firstAttribute="leading" secondItem="4Nv-zc-4LY" secondAttribute="leading" id="Tqz-Xw-0jo"/>
-                            <constraint firstItem="T3p-gr-1CP" firstAttribute="leading" secondItem="4Nv-zc-4LY" secondAttribute="leading" id="UJa-dI-UIp"/>
+                            <constraint firstItem="T3p-gr-1CP" firstAttribute="leading" secondItem="4Nv-zc-4LY" secondAttribute="leading" constant="16" id="UJa-dI-UIp"/>
                             <constraint firstItem="T3p-gr-1CP" firstAttribute="top" secondItem="imq-Ci-ZEu" secondAttribute="bottom" id="WrZ-js-jIf"/>
                             <constraint firstItem="vfN-fZ-ggw" firstAttribute="top" secondItem="imq-Ci-ZEu" secondAttribute="bottom" id="a7e-lk-pqj"/>
                             <constraint firstItem="zLV-gA-Ncn" firstAttribute="top" secondItem="vfN-fZ-ggw" secondAttribute="bottom" id="fnT-Bg-GPz"/>
-                            <constraint firstItem="vfN-fZ-ggw" firstAttribute="leading" secondItem="T3p-gr-1CP" secondAttribute="trailing" id="jyK-Ep-j0k"/>
+                            <constraint firstItem="vfN-fZ-ggw" firstAttribute="leading" secondItem="T3p-gr-1CP" secondAttribute="trailing" constant="-1" id="jyK-Ep-j0k"/>
                             <constraint firstAttribute="trailing" secondItem="m36-gq-FLu" secondAttribute="trailing" id="llV-iK-DWB"/>
                             <constraint firstItem="zLV-gA-Ncn" firstAttribute="leading" secondItem="4Nv-zc-4LY" secondAttribute="leading" id="psF-7k-sJd"/>
                             <constraint firstAttribute="trailing" secondItem="zLV-gA-Ncn" secondAttribute="trailing" id="tDO-h7-RTH"/>
@@ -134,7 +132,7 @@
                         <outlet property="connectionPicker" destination="zLV-gA-Ncn" id="vfp-fw-1kT"/>
                         <outlet property="connectionPickerCurtain" destination="m36-gq-FLu" id="xqT-kX-7VC"/>
                         <outlet property="connectionPickerCurtainConstraint" destination="u1V-QO-WhF" id="KB8-BS-DRB"/>
-                        <outlet property="currentInterval" destination="T3p-gr-1CP" id="9wt-Og-56x"/>
+                        <outlet property="currentIntervalLabel" destination="T3p-gr-1CP" id="tWz-sl-a0v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2pm-OQ-5Ag" userLabel="First Responder" sceneMemberID="firstResponder"/>
