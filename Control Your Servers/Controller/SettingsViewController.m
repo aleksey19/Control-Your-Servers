@@ -19,6 +19,8 @@
 
 @implementation SettingsViewController
 
+#pragma mark - View life cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupView];
@@ -29,8 +31,9 @@
     
     NSString *interval = [NSUserDefaults.standardUserDefaults objectForKey:@"interval"];
     interval ? (self.currentIntervalLabel.text = [NSString stringWithFormat:@"Current interval: %@ min", interval]) : (self.currentIntervalLabel.text = @"Set refresh interval");
-
 }
+
+#pragma mark - Picker view datasource
 
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     if ([pickerView isEqual:self.connectionPicker]){
@@ -47,6 +50,8 @@
     return 0;
 }
 
+#pragma mark - Picker view delegate
+
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     
     if ([pickerView isEqual:self.connectionPicker]){
@@ -55,8 +60,9 @@
     }
     
     return nil;
-
 }
+
+#pragma mark - Actions 
 
 - (IBAction)saveIntervalConnection:(id)sender {
   
