@@ -16,6 +16,7 @@
 
 @property (nonatomic, strong) NSMutableArray <ServerModel*> *servers;
 
+@property (nonatomic,strong) NSArray *serversArray;
 @end
 
 @implementation ServersViewController
@@ -27,17 +28,25 @@
     [self setupView];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    self.serversArray = [[NSUserDefaults standardUserDefaults] arrayForKey:@"servers"];
+    [self.tableView reloadData];
+}
+
 - (void)setupView {
     self.title = @"Servers";
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
 }
 
 #pragma mark - Actions
 
 - (IBAction)settingsBarButtonAction:(UIButton *)sender {
     // show settings controller
+
+
 }
 
 #pragma mark - Table view data source
@@ -47,11 +56,16 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.servers.count;
+    return self.serversArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = nil;
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID"];
+    
+    if (!cell) {
+        cell =[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cellID"];
+    }
+    cell.textLabel.text = [[self.serversArray objectAtIndex:indexPath.row] objectForKey:@"name"];
     
     return cell;
 }

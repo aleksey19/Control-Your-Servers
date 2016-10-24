@@ -31,6 +31,7 @@
     
     NSString *interval = [NSUserDefaults.standardUserDefaults objectForKey:@"interval"];
     interval ? (self.currentIntervalLabel.text = [NSString stringWithFormat:@"Current interval: %@ min", interval]) : (self.currentIntervalLabel.text = @"Set refresh interval");
+    
 }
 
 #pragma mark - Picker view datasource
@@ -73,10 +74,10 @@
     }
     else if (self.connectionPickerCurtainConstraint.constant == 125)
     {
-        [sender setTitle:@"Change" forState:UIControlStateNormal];
         [NSUserDefaults.standardUserDefaults setInteger:([self.connectionPicker selectedRowInComponent:0 ]+1) forKey:@"interval"];
         self.currentIntervalLabel.text = [NSString stringWithFormat:@"Current interval: %@ min",[NSUserDefaults.standardUserDefaults objectForKey:@"interval"]];
         
+        [sender setTitle:@"Change" forState:UIControlStateNormal];
         self.connectionPickerCurtainConstraint.constant = 0;
     }
 }
