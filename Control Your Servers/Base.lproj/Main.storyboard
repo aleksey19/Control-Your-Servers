@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HDx-MI-mLI">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HDx-MI-mLI">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -48,6 +48,9 @@
                     <navigationItem key="navigationItem" id="WDi-aH-z81">
                         <barButtonItem key="leftBarButtonItem" title="Add" id="cHT-Wg-1k9">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="70x-hE-asz" kind="show" id="Rxu-ja-eme"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="settings" id="hVc-3P-2Wh">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -137,7 +140,95 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2pm-OQ-5Ag" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2002.4000000000001" y="34.632683658170919"/>
+            <point key="canvasLocation" x="2028" y="-349"/>
+        </scene>
+        <!--Add Server View Controller-->
+        <scene sceneID="bt5-5t-31I">
+            <objects>
+                <viewController id="70x-hE-asz" customClass="AddServerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dfN-za-M06"/>
+                        <viewControllerLayoutGuide type="bottom" id="R1f-Gc-0ac"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="POM-LB-JhF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m01-oR-u1a">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="R8O-Rw-Apn"/>
+                                </constraints>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addServerAction:" destination="70x-hE-asz" eventType="touchUpInside" id="upG-Fd-TD0"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J7A-CS-CxI">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="LlK-2j-tJ4"/>
+                                    <constraint firstAttribute="width" constant="200" id="jBy-m8-R1Z"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="70x-hE-asz" id="NSK-x1-xG2"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7H-g5-UIS">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="myG-2D-fmK"/>
+                                    <constraint firstAttribute="width" constant="70" id="xM7-n2-2jd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iw8-El-X9Z">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="4Y0-zL-qdK"/>
+                                    <constraint firstAttribute="height" constant="30" id="xTi-oo-J59"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UhA-h8-ri4">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="u92-qf-NG5"/>
+                                    <constraint firstAttribute="height" constant="30" id="xjA-FT-HzR"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="70x-hE-asz" id="YBE-Bc-jOc"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="m01-oR-u1a" firstAttribute="top" secondItem="UhA-h8-ri4" secondAttribute="bottom" constant="15" id="5EY-lf-fFI"/>
+                            <constraint firstItem="UhA-h8-ri4" firstAttribute="leading" secondItem="POM-LB-JhF" secondAttribute="leadingMargin" constant="35" id="6iC-6m-oom"/>
+                            <constraint firstItem="J7A-CS-CxI" firstAttribute="top" secondItem="o7H-g5-UIS" secondAttribute="bottom" constant="5" id="9dG-H6-u37"/>
+                            <constraint firstItem="iw8-El-X9Z" firstAttribute="top" secondItem="J7A-CS-CxI" secondAttribute="bottom" constant="20" id="9rB-UP-QJ3"/>
+                            <constraint firstItem="o7H-g5-UIS" firstAttribute="top" secondItem="dfN-za-M06" secondAttribute="bottom" constant="20" id="BE4-Jf-Ifn"/>
+                            <constraint firstItem="J7A-CS-CxI" firstAttribute="leading" secondItem="POM-LB-JhF" secondAttribute="leadingMargin" constant="35" id="JG0-mo-7XK"/>
+                            <constraint firstItem="o7H-g5-UIS" firstAttribute="leading" secondItem="POM-LB-JhF" secondAttribute="leadingMargin" constant="35" id="KHa-zg-Std"/>
+                            <constraint firstItem="UhA-h8-ri4" firstAttribute="top" secondItem="iw8-El-X9Z" secondAttribute="bottom" constant="5" id="LBw-Qn-0JU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="m01-oR-u1a" secondAttribute="trailing" constant="100" id="M95-iN-Dtw"/>
+                            <constraint firstItem="iw8-El-X9Z" firstAttribute="leading" secondItem="POM-LB-JhF" secondAttribute="leadingMargin" constant="35" id="Nsx-sX-qeN"/>
+                            <constraint firstItem="m01-oR-u1a" firstAttribute="leading" secondItem="POM-LB-JhF" secondAttribute="leadingMargin" constant="100" id="PDl-30-BAZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addressServerTextField" destination="UhA-h8-ri4" id="3X2-aB-Yye"/>
+                        <outlet property="nameServerTextField" destination="J7A-CS-CxI" id="y3g-Zv-0hK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CuE-dC-msY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2028" y="301.79910044977515"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qc7-2y-TqY">
