@@ -20,17 +20,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupView];
-    // Do any additional setup after loading the view.
+    [self setupModel];
 }
 
-- (void)setupView {
-    self.servers =  [[[NSUserDefaults standardUserDefaults] arrayForKey:@"servers"]mutableCopy];
+- (void)setupModel {
+    self.servers =  [[[NSUserDefaults standardUserDefaults] arrayForKey:@"servers"] mutableCopy];
     
     if(!self.servers){
         self.servers = [NSMutableArray new];
     }
-    
 }
 
 #pragma mark - Actions
@@ -40,9 +38,11 @@
     NSString* name = self.nameServerTextField.text;
     NSString* address = self.addressServerTextField.text;
     
-    if ((![name isEqual:@""])&&(![address isEqual:@""])) {
-
-        NSDictionary* server = [NSDictionary dictionaryWithObjectsAndKeys:name,@"name",address,@"address",nil];
+    if (name.length && address.length) {
+        NSDictionary *server = @{
+                                 @"name" : name,
+                                 @"address" : address
+                                 };
         [self.servers addObject:server];
         [[NSUserDefaults standardUserDefaults] setObject:[self.servers copy] forKey:@"servers"];
         
@@ -58,16 +58,5 @@
 //    
 //    return YES;
 //}
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
