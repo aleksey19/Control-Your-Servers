@@ -170,7 +170,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                 <connections>
                                     <outlet property="delegate" destination="70x-hE-asz" id="NSK-x1-xG2"/>
                                 </connections>
@@ -178,7 +178,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7H-g5-UIS">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="myG-2D-fmK"/>
-                                    <constraint firstAttribute="width" constant="70" id="xM7-n2-2jd"/>
+                                    <constraint firstAttribute="width" constant="47" id="xM7-n2-2jd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -186,7 +186,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iw8-El-X9Z">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="4Y0-zL-qdK"/>
+                                    <constraint firstAttribute="width" constant="65" id="4Y0-zL-qdK"/>
                                     <constraint firstAttribute="height" constant="30" id="xTi-oo-J59"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -200,29 +200,41 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                 <connections>
                                     <outlet property="delegate" destination="70x-hE-asz" id="YBE-Bc-jOc"/>
                                 </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Server was added" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ODX-nm-Fve">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="TyU-jb-ZyN"/>
+                                    <constraint firstAttribute="width" constant="230" id="uB3-EH-RpJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="m01-oR-u1a" firstAttribute="top" secondItem="UhA-h8-ri4" secondAttribute="bottom" constant="15" id="5EY-lf-fFI"/>
-                            <constraint firstItem="UhA-h8-ri4" firstAttribute="leading" secondItem="POM-LB-JhF" secondAttribute="leadingMargin" constant="35" id="6iC-6m-oom"/>
+                            <constraint firstItem="o7H-g5-UIS" firstAttribute="centerX" secondItem="POM-LB-JhF" secondAttribute="centerX" id="2aN-d0-gdC"/>
+                            <constraint firstItem="m01-oR-u1a" firstAttribute="top" secondItem="UhA-h8-ri4" secondAttribute="bottom" constant="5" id="5EY-lf-fFI"/>
                             <constraint firstItem="J7A-CS-CxI" firstAttribute="top" secondItem="o7H-g5-UIS" secondAttribute="bottom" constant="5" id="9dG-H6-u37"/>
-                            <constraint firstItem="iw8-El-X9Z" firstAttribute="top" secondItem="J7A-CS-CxI" secondAttribute="bottom" constant="20" id="9rB-UP-QJ3"/>
-                            <constraint firstItem="o7H-g5-UIS" firstAttribute="top" secondItem="dfN-za-M06" secondAttribute="bottom" constant="20" id="BE4-Jf-Ifn"/>
-                            <constraint firstItem="J7A-CS-CxI" firstAttribute="leading" secondItem="POM-LB-JhF" secondAttribute="leadingMargin" constant="35" id="JG0-mo-7XK"/>
-                            <constraint firstItem="o7H-g5-UIS" firstAttribute="leading" secondItem="POM-LB-JhF" secondAttribute="leadingMargin" constant="35" id="KHa-zg-Std"/>
+                            <constraint firstItem="iw8-El-X9Z" firstAttribute="top" secondItem="J7A-CS-CxI" secondAttribute="bottom" constant="10" id="9rB-UP-QJ3"/>
                             <constraint firstItem="UhA-h8-ri4" firstAttribute="top" secondItem="iw8-El-X9Z" secondAttribute="bottom" constant="5" id="LBw-Qn-0JU"/>
+                            <constraint firstItem="UhA-h8-ri4" firstAttribute="centerX" secondItem="POM-LB-JhF" secondAttribute="centerX" id="M1K-Me-qA9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="m01-oR-u1a" secondAttribute="trailing" constant="100" id="M95-iN-Dtw"/>
-                            <constraint firstItem="iw8-El-X9Z" firstAttribute="leading" secondItem="POM-LB-JhF" secondAttribute="leadingMargin" constant="35" id="Nsx-sX-qeN"/>
+                            <constraint firstItem="ODX-nm-Fve" firstAttribute="centerX" secondItem="POM-LB-JhF" secondAttribute="centerX" id="Nzt-af-GoH"/>
                             <constraint firstItem="m01-oR-u1a" firstAttribute="leading" secondItem="POM-LB-JhF" secondAttribute="leadingMargin" constant="100" id="PDl-30-BAZ"/>
+                            <constraint firstItem="J7A-CS-CxI" firstAttribute="centerX" secondItem="POM-LB-JhF" secondAttribute="centerX" id="Xmw-un-NA8"/>
+                            <constraint firstItem="ODX-nm-Fve" firstAttribute="top" secondItem="dfN-za-M06" secondAttribute="bottom" constant="3" id="YMc-q9-ctE"/>
+                            <constraint firstItem="iw8-El-X9Z" firstAttribute="centerX" secondItem="POM-LB-JhF" secondAttribute="centerX" id="j67-re-CPg"/>
+                            <constraint firstItem="o7H-g5-UIS" firstAttribute="top" secondItem="ODX-nm-Fve" secondAttribute="bottom" constant="5" id="oLu-oB-p7D"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addressServerTextField" destination="UhA-h8-ri4" id="3X2-aB-Yye"/>
+                        <outlet property="messageLabel" destination="ODX-nm-Fve" id="7kw-GW-fm6"/>
                         <outlet property="nameServerTextField" destination="J7A-CS-CxI" id="y3g-Zv-0hK"/>
                     </connections>
                 </viewController>

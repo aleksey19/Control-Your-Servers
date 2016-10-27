@@ -27,8 +27,8 @@
 }
 
 - (void)setupView {
-    self.title = @"Settings";
     
+    self.title = @"Settings";
     NSString *interval = [NSUserDefaults.standardUserDefaults objectForKey:@"interval"];
     interval ? (self.currentIntervalLabel.text = [NSString stringWithFormat:@"Current interval: %@ min", interval]) : (self.currentIntervalLabel.text = @"Set refresh interval");
     
@@ -37,13 +37,16 @@
 #pragma mark - Picker view datasource
 
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+  
     if ([pickerView isEqual:self.connectionPicker]){
-            return 60;
+    
+        return 60;
     }
     return 0;
 }
 
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+   
     if ([pickerView isEqual:self.connectionPicker]) {
         
         return 1;
@@ -68,13 +71,14 @@
 - (IBAction)saveIntervalConnection:(id)sender {
   
     if (self.connectionPickerCurtainConstraint.constant == 0) {
-        [sender setTitle:@"Done" forState:UIControlStateNormal];
         
+        [sender setTitle:@"Done" forState:UIControlStateNormal];
         self.connectionPickerCurtainConstraint.constant = 125;
     }
     else if (self.connectionPickerCurtainConstraint.constant == 125)
     {
         [NSUserDefaults.standardUserDefaults setInteger:([self.connectionPicker selectedRowInComponent:0 ]+1) forKey:@"interval"];
+        
         self.currentIntervalLabel.text = [NSString stringWithFormat:@"Current interval: %@ min",[NSUserDefaults.standardUserDefaults objectForKey:@"interval"]];
         
         [sender setTitle:@"Change" forState:UIControlStateNormal];
