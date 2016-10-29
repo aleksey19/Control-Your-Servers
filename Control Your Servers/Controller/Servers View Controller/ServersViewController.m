@@ -8,12 +8,13 @@
 
 #import "ServersViewController.h"
 #import "ServerModel.h"
-
+#import "CustomTableViewCell.h"
+#import "ChangeServerViewController.h"
 @interface ServersViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
-
+@property (strong, nonatomic) IBOutlet UILongPressGestureRecognizer *gestureRecognizer;
 @property (nonatomic, strong) NSMutableArray <ServerModel*> *servers;
 
 @property (nonatomic,strong) NSArray *serversArray;
@@ -38,16 +39,25 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    
 }
+
 
 #pragma mark - Actions
 
-- (IBAction)settingsBarButtonAction:(UIButton *)sender {
-    // show settings controller
-
-
+- (IBAction)longPressOnTableViewCell:(id)sender {
+    CGPoint p = [self.gestureRecognizer locationInView:self.tableView];
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:p];
+    if (indexPath) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main.storyboard" bundle:nil];
+        ChangeServerViewController *viewController = (ChangeServerViewController*)[storyboard instantiateViewControllerWithIdentifier:@"ChangeServerViewController"];
+        [self presentViewController:viewController animated:YES completion:nil];
+    }
 }
+
+
+
+
 
 #pragma mark - Table view data source
 
@@ -60,13 +70,11 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID"];
+    CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellID"];
     
-    if (!cell) {
-        cell =[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cellID"];
-    }
-    cell.textLabel.text = [[self.serversArray objectAtIndex:indexPath.row] objectForKey:@"name"];
     
+    cell.nameServerLabel.text = [[self.serversArray objectAtIndex:indexPath.row] objectForKey:@"name"];
+    cell.addressServerLabel.text = [[self.serversArray objectAtIndex:indexPath.row] objectForKey:@"address"];
     return cell;
 }
 

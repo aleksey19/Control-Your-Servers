@@ -7,8 +7,7 @@
 //
 
 #import "AddServerViewController.h"
-#import "ServerModel.h"
-@interface AddServerViewController ()<UITextFieldDelegate>
+@interface AddServerViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *nameServerTextField;
 @property (weak, nonatomic) IBOutlet UITextField *addressServerTextField;
 @property (weak, nonatomic) IBOutlet UILabel *messageLabel;                  //default hide
@@ -16,6 +15,9 @@
 @end
 
 @implementation AddServerViewController
+
+#define VALIDATOR_NAME_CONSTANT @"1234567890zaqwsxcderfvbgtyhnmjuikolp QAZWSXEDCRFVTGBYHNUJMIKOLP."
+#define VALIDATOP_ADDRESS_CONSTANT @"1234567890zaqwsxcderfvbgtyhnmjuikolp QAZWSXEDCRFVTGBYHNUJMIKOLP./:"
 
 #pragma mark - View life cycle
 
@@ -30,28 +32,22 @@
     if(!self.servers){
         self.servers = [NSMutableArray new];
     }
-    self.title = @"Add server";
 }
 
 #pragma mark - Actions
 
 - (IBAction)addServerAction:(id)sender {
-    
-    NSString* name = self.nameServerTextField.text;
-    NSString* address = self.addressServerTextField.text;
+    NSString *name = self.nameServerTextField.text;
+    NSString *address = self.addressServerTextField.text;
     if (name.length && address.length) {
-        NSDictionary *server = @{
-                                 @"name" : name,
-                                 @"address" : address
-                                 };
-        [self.servers addObject:server];
-        [[NSUserDefaults standardUserDefaults] setObject:[self.servers copy] forKey:@"servers"];
+        [self saveServerWithName:self.nameServerTextField.text withAddress:self.addressServerTextField.text];
         [self showAndHideMessageWithText:@"Server was added" withColor:[UIColor greenColor]];
-        self.nameServerTextField.text = @"";
-        self.addressServerTextField.text = @"";
     }
-    [self showAndHideMessageWithText:@"Server was not added" withColor:[UIColor redColor]];
+    else{
+        [self showAndHideMessageWithText:@"Server was not added" withColor:[UIColor redColor]];
+    }
 }
+
 
 #pragma mark - TextField delegate
 
@@ -68,6 +64,16 @@
     [self.addressServerTextField endEditing:YES];
 }
 
+-(void)saveServerWithName:(NSString *)name withAddress:(NSString *)address {
+    
+    NSDictionary *server = @{
+                             @"name" : name,
+                             @"address" : address
+                             };
+    [self.servers addObject:server];
+    [[NSUserDefaults standardUserDefaults] setObject:[self.servers copy] forKey:@"servers"];
+    
+}
 
 -(void)showAndHideMessageWithText:(NSString *)text withColor:(UIColor *)color {
     
@@ -78,38 +84,37 @@
                           delay:0
                         options:UIViewAnimationOptionCurveEaseIn
                      animations:^{
-        [self.messageLabel setAlpha:1];
-    }
+                         [self.messageLabel setAlpha:1];
+                     }
                      completion:^(BOOL finished) {
-        if (finished)
-        {
-            [UIView animateWithDuration:0.4
-                                delay:0.9
-                              options:UIViewAnimationOptionCurveEaseOut
-                           animations:^{
-                [self.messageLabel setAlpha:0];
-            } completion:nil];
-        }
-    }];
+                         if (finished)
+                         {
+                             [UIView animateWithDuration:0.4
+                                                   delay:0.9
+                                                 options:UIViewAnimationOptionCurveEaseOut
+                                              animations:^{
+                                                  [self.messageLabel setAlpha:0];
+                                              } completion:nil];
+                         }
+                     }];
 }
 
 
-
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    NSLog(@"%@",string);
+    
     if (textField == self.nameServerTextField) {
-            NSCharacterSet* set = [NSCharacterSet characterSetWithCharactersInString:@"1234567890zaqwsxcderfvbgtyhnmjuikolp QAZWSXEDCRFVTGBYHNUJMIKOLP."];
-            if ([string rangeOfCharacterFromSet:set].location != NSNotFound || !string.length) {
-                return YES;
-            }
-            else{
-                [self showAndHideMessageWithText:@"Incorrectly symbol" withColor:[UIColor redColor]];
-                return NO;
-            }
+        NSCharacterSet* set = [NSCharacterSet characterSetWithCharactersInString:VALIDATOR_NAME_CONSTANT];
+        if ([string rangeOfCharacterFromSet:set].location != NSNotFound || !string.length) {
+            return YES;
+        }
+        else{
+            [self showAndHideMessageWithText:@"Incorrectly symbol" withColor:[UIColor redColor]];
+            return NO;
+        }
     }
     
     if (textField == self.addressServerTextField) {
-        NSCharacterSet* set = [NSCharacterSet characterSetWithCharactersInString:@"1234567890zaqwsxcderfvbgtyhnmjuikolp QAZWSXEDCRFVTGBYHNUJMIKOLP./:"];
+        NSCharacterSet* set = [NSCharacterSet characterSetWithCharactersInString:VALIDATOP_ADDRESS_CONSTANT];
         if ([string rangeOfCharacterFromSet:set].location !=NSNotFound || !string.length) {
             return YES;
         }

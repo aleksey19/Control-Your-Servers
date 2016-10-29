@@ -14,10 +14,12 @@
 		5BBD61111DA8F2C8004C3BB9 /* ServersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBD61101DA8F2C8004C3BB9 /* ServersViewController.m */; };
 		5BBD61121DA8F45B004C3BB9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5BBD61071DA8F231004C3BB9 /* Info.plist */; };
 		5BBD61131DA8F4E6004C3BB9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBD61081DA8F231004C3BB9 /* main.m */; };
-		845F9CC71DBE54E800D2FDEF /* AddServerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 845F9CC61DBE54E800D2FDEF /* AddServerViewController.m */; };
 		8489E7231DB92F0000D65025 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8489E7221DB92F0000D65025 /* SettingsViewController.m */; };
 		8489E7281DB92F1900D65025 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8489E7241DB92F1900D65025 /* LaunchScreen.storyboard */; };
 		8489E7291DB92F1900D65025 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8489E7261DB92F1900D65025 /* Main.storyboard */; };
+		849CD7B01DC4C58B0040CDD5 /* AddServerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849CD7AD1DC4C58B0040CDD5 /* AddServerViewController.m */; };
+		849CD7B41DC4C6200040CDD5 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849CD7B31DC4C6200040CDD5 /* CustomTableViewCell.m */; };
+		849CD7BA1DC4D3160040CDD5 /* ChangeServerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849CD7B91DC4D3160040CDD5 /* ChangeServerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,13 +34,17 @@
 		5BBD61071DA8F231004C3BB9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BBD61081DA8F231004C3BB9 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5BBD610F1DA8F2C8004C3BB9 /* ServersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServersViewController.h; path = "Servers View Controller/ServersViewController.h"; sourceTree = "<group>"; };
-		5BBD61101DA8F2C8004C3BB9 /* ServersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServersViewController.m; path = "Servers View Controller/ServersViewController.m"; sourceTree = "<group>"; };
-		845F9CC51DBE54E800D2FDEF /* AddServerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddServerViewController.h; sourceTree = "<group>"; };
-		845F9CC61DBE54E800D2FDEF /* AddServerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddServerViewController.m; sourceTree = "<group>"; };
+		5BBD61101DA8F2C8004C3BB9 /* ServersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServersViewController.m; path = "Control Your Servers/Controller/Servers View Controller/ServersViewController.m"; sourceTree = SOURCE_ROOT; };
 		8489E7211DB92F0000D65025 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		8489E7221DB92F0000D65025 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		8489E7251DB92F1900D65025 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8489E7271DB92F1900D65025 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		849CD7AC1DC4C58B0040CDD5 /* AddServerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddServerViewController.h; path = "Servers View Controller/AddServerViewController.h"; sourceTree = "<group>"; };
+		849CD7AD1DC4C58B0040CDD5 /* AddServerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddServerViewController.m; path = "Servers View Controller/AddServerViewController.m"; sourceTree = "<group>"; };
+		849CD7B21DC4C6200040CDD5 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
+		849CD7B31DC4C6200040CDD5 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
+		849CD7B81DC4D3160040CDD5 /* ChangeServerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeServerViewController.h; sourceTree = "<group>"; };
+		849CD7B91DC4D3160040CDD5 /* ChangeServerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeServerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,14 +128,26 @@
 		5BBD610E1DA8F29B004C3BB9 /* Servers Controller */ = {
 			isa = PBXGroup;
 			children = (
-				845F9CC51DBE54E800D2FDEF /* AddServerViewController.h */,
-				845F9CC61DBE54E800D2FDEF /* AddServerViewController.m */,
+				849CD7B21DC4C6200040CDD5 /* CustomTableViewCell.h */,
+				849CD7B31DC4C6200040CDD5 /* CustomTableViewCell.m */,
+				849CD7AB1DC4C55E0040CDD5 /* OperationController */,
 				8489E7211DB92F0000D65025 /* SettingsViewController.h */,
 				8489E7221DB92F0000D65025 /* SettingsViewController.m */,
 				5BBD610F1DA8F2C8004C3BB9 /* ServersViewController.h */,
 				5BBD61101DA8F2C8004C3BB9 /* ServersViewController.m */,
 			);
 			name = "Servers Controller";
+			sourceTree = "<group>";
+		};
+		849CD7AB1DC4C55E0040CDD5 /* OperationController */ = {
+			isa = PBXGroup;
+			children = (
+				849CD7AC1DC4C58B0040CDD5 /* AddServerViewController.h */,
+				849CD7AD1DC4C58B0040CDD5 /* AddServerViewController.m */,
+				849CD7B81DC4D3160040CDD5 /* ChangeServerViewController.h */,
+				849CD7B91DC4D3160040CDD5 /* ChangeServerViewController.m */,
+			);
+			name = OperationController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,7 +225,9 @@
 				5B4AC9A61DAA1D8A0018019C /* ServerModel.m in Sources */,
 				5BBD61131DA8F4E6004C3BB9 /* main.m in Sources */,
 				5BBD61111DA8F2C8004C3BB9 /* ServersViewController.m in Sources */,
-				845F9CC71DBE54E800D2FDEF /* AddServerViewController.m in Sources */,
+				849CD7B01DC4C58B0040CDD5 /* AddServerViewController.m in Sources */,
+				849CD7BA1DC4D3160040CDD5 /* ChangeServerViewController.m in Sources */,
+				849CD7B41DC4C6200040CDD5 /* CustomTableViewCell.m in Sources */,
 				5BBD60F21DA8F14E004C3BB9 /* AppDelegate.m in Sources */,
 				5B4AC9A91DAA1F7C0018019C /* ReachabilityService.m in Sources */,
 				8489E7231DB92F0000D65025 /* SettingsViewController.m in Sources */,
