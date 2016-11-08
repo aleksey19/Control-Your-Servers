@@ -1,0 +1,54 @@
+
+/* Class = "UIViewController"; title = "Add server"; ObjectID = "70x-hE-asz"; */
+"70x-hE-asz.title" = "Add server";
+
+/* Class = "UILabel"; text = "Server was added"; ObjectID = "ODX-nm-Fve"; */
+"ODX-nm-Fve.text" = "Server was added";
+
+/* Class = "UILabel"; text = "Current interval:"; ObjectID = "T3p-gr-1CP"; */
+"T3p-gr-1CP.text" = "Current interval:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "VCI-TR-g0v"; */
+"VCI-TR-g0v.text" = "Label";
+
+/* Class = "UISegmentedControl"; VhC-LE-YEX.segmentTitles[0] = "Servers"; ObjectID = "VhC-LE-YEX"; */
+"VhC-LE-YEX.segmentTitles[0]" = "Servers";
+
+/* Class = "UISegmentedControl"; VhC-LE-YEX.segmentTitles[1] = "Graphs"; ObjectID = "VhC-LE-YEX"; */
+"VhC-LE-YEX.segmentTitles[1]" = "Graphs";
+
+/* Class = "UINavigationItem"; title = "Change server"; ObjectID = "Xmz-Dw-WeR"; */
+"Xmz-Dw-WeR.title" = "Change server";
+
+/* Class = "UIBarButtonItem"; title = "Add"; ObjectID = "cHT-Wg-1k9"; */
+"cHT-Wg-1k9.title" = "Add";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "eew-uF-kdB"; */
+"eew-uF-kdB.text" = "Name";
+
+/* Class = "UIViewController"; title = "Change server"; ObjectID = "gwe-pm-bEG"; */
+"gwe-pm-bEG.title" = "Change server";
+
+/* Class = "UILabel"; text = "Address"; ObjectID = "iw8-El-X9Z"; */
+"iw8-El-X9Z.text" = "Address";
+
+/* Class = "UIButton"; normalTitle = "Add"; ObjectID = "m01-oR-u1a"; */
+"m01-oR-u1a.normalTitle" = "Add";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "o7H-g5-UIS"; */
+"o7H-g5-UIS.text" = "Name";
+
+/* Class = "UILabel"; text = "Address"; ObjectID = "piw-2p-iIf"; */
+"piw-2p-iIf.text" = "Address";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "q9a-JA-ZU2"; */
+"q9a-JA-ZU2.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Change"; ObjectID = "tZ6-aN-JGa"; */
+"tZ6-aN-JGa.normalTitle" = "Change";
+
+/* Class = "UIButton"; normalTitle = "Change"; ObjectID = "vfN-fZ-ggw"; */
+"vfN-fZ-ggw.normalTitle" = "Change";
+
+/* Class = "UILabel"; text = "Server was added"; ObjectID = "wr4-2w-Kv9"; */
+"wr4-2w-Kv9.text" = "Server was added";

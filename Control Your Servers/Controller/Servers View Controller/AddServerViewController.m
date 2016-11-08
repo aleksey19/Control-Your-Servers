@@ -16,8 +16,8 @@
 
 @implementation AddServerViewController
 
-#define VALIDATOR_NAME_CONSTANT @"1234567890zaqwsxcderfvbgtyhnmjuikolp QAZWSXEDCRFVTGBYHNUJMIKOLP."
-#define VALIDATOP_ADDRESS_CONSTANT @"1234567890zaqwsxcderfvbgtyhnmjuikolp QAZWSXEDCRFVTGBYHNUJMIKOLP./:"
+NSString* const validatorNameConstant = @"1234567890zaqwsxcderfvbgtyhnmjuikolp QAZWSXEDCRFVTGBYHNUJMIKOLP.";
+NSString* const validatorAddressConstant = @"1234567890zaqwsxcderfvbgtyhnmjuikolp QAZWSXEDCRFVTGBYHNUJMIKOLP./:";
 
 #pragma mark - View life cycle
 
@@ -40,8 +40,10 @@
     NSString *name = self.nameServerTextField.text;
     NSString *address = self.addressServerTextField.text;
     if (name.length && address.length) {
-        [self saveServerWithName:self.nameServerTextField.text withAddress:self.addressServerTextField.text];
+        [self saveServerWithName:name withAddress:address];
         [self showAndHideMessageWithText:@"Server was added" withColor:[UIColor greenColor]];
+        self.nameServerTextField.text = @"";
+        self.addressServerTextField.text =@"";
     }
     else{
         [self showAndHideMessageWithText:@"Server was not added" withColor:[UIColor redColor]];
@@ -103,7 +105,7 @@
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     
     if (textField == self.nameServerTextField) {
-        NSCharacterSet* set = [NSCharacterSet characterSetWithCharactersInString:VALIDATOR_NAME_CONSTANT];
+        NSCharacterSet* set = [NSCharacterSet characterSetWithCharactersInString:validatorNameConstant];
         if ([string rangeOfCharacterFromSet:set].location != NSNotFound || !string.length) {
             return YES;
         }
@@ -114,7 +116,7 @@
     }
     
     if (textField == self.addressServerTextField) {
-        NSCharacterSet* set = [NSCharacterSet characterSetWithCharactersInString:VALIDATOP_ADDRESS_CONSTANT];
+        NSCharacterSet* set = [NSCharacterSet characterSetWithCharactersInString:validatorAddressConstant];
         if ([string rangeOfCharacterFromSet:set].location !=NSNotFound || !string.length) {
             return YES;
         }

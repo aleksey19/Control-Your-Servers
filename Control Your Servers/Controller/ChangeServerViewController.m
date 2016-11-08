@@ -9,19 +9,24 @@
 #import "ChangeServerViewController.h"
 
 @interface ChangeServerViewController ()
-
+@property (weak, nonatomic) IBOutlet UITextField *nameServerTextField;
+@property (weak, nonatomic) IBOutlet UITextField *addressServerTextField;
+@property (weak, nonatomic) IBOutlet UILabel *messageLabel;                  //default hide
+@property (nonatomic, strong) NSMutableArray *servers;
 @end
 
 @implementation ChangeServerViewController
 
-#define VALIDATOR_NAME_CONSTANT @"1234567890zaqwsxcderfvbgtyhnmjuikolp QAZWSXEDCRFVTGBYHNUJMIKOLP."
-#define VALIDATOP_ADDRESS_CONSTANT @"1234567890zaqwsxcderfvbgtyhnmjuikolp QAZWSXEDCRFVTGBYHNUJMIKOLP./:"
+NSString* const validatorNameConstant1 = @"1234567890zaqwsxcderfvbgtyhnmjuikolp QAZWSXEDCRFVTGBYHNUJMIKOLP.";
+NSString* const validatorAddressConstant1 = @"1234567890zaqwsxcderfvbgtyhnmjuikolp QAZWSXEDCRFVTGBYHNUJMIKOLP./:";
+
 
 #pragma mark - View life cycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupModel];
+    [self setupView];
     // Do any additional setup after loading the view.
 }
 
@@ -34,7 +39,15 @@
 }
 
 -(void)setupView {
-    
+    self.nameServerTextField.text = [self currentServerName];
+    self.addressServerTextField.text = [self currentServerAddress];
+}
+
+- (NSString *)currentServerName {
+    return [[self.servers objectAtIndex:self.indexPathForSelectedRow.row] objectForKey:@"name"];
+}
+- (NSString *)currentServerAddress {
+    return [[self.servers objectAtIndex:self.indexPathForSelectedRow.row] objectForKey:@"address"];
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -50,16 +63,39 @@
     [self.addressServerTextField endEditing:YES];
 }
 
--(void)saveServerWithName:(NSString *)name withAddress:(NSString *)address {
+-(void)changeServerNameTo:(NSString *)name AddressTo:(NSString *)address {
     
     NSDictionary *server = @{
                              @"name" : name,
                              @"address" : address
                              };
-    [self.servers addObject:server];
+    [self.servers replaceObjectAtIndex:self.indexPathForSelectedRow.row withObject:server];
     [[NSUserDefaults standardUserDefaults] setObject:[self.servers copy] forKey:@"servers"];
     
 }
+
+#pragma mark - Actions
+
+- (IBAction)changeServerAction:(id)sender {
+    NSString *name = self.nameServerTextField.text;
+    NSString *address = self.addressServerTextField.text;
+    
+    NSString *currentName = [self currentServerName];
+    NSString *currentAddress = [self currentServerAddress];
+    
+    if (!name.length && !address.length) {
+        [self showAndHideMessageWithText:@"Strings can not be empty" withColor:[UIColor redColor]];
+        }
+    else if (name == currentName && address == currentAddress){
+        [self showAndHideMessageWithText:@"Please enter the changes" withColor:[UIColor redColor]];
+        }
+    else {
+        [self changeServerNameTo:name AddressTo:address];
+        [self showAndHideMessageWithText:@"Server was changed" withColor:[UIColor greenColor]];
+
+    }
+}
+
 
 -(void)showAndHideMessageWithText:(NSString *)text withColor:(UIColor *)color {
     
@@ -89,7 +125,7 @@
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     
     if (textField == self.nameServerTextField) {
-        NSCharacterSet* set = [NSCharacterSet characterSetWithCharactersInString:VALIDATOR_NAME_CONSTANT];
+        NSCharacterSet* set = [NSCharacterSet characterSetWithCharactersInString:validatorNameConstant1];
         if ([string rangeOfCharacterFromSet:set].location != NSNotFound || !string.length) {
             return YES;
         }
@@ -100,8 +136,8 @@
     }
     
     if (textField == self.addressServerTextField) {
-        NSCharacterSet* set = [NSCharacterSet characterSetWithCharactersInString:VALIDATOP_ADDRESS_CONSTANT];
-        if ([string rangeOfCharacterFromSet:set].location !=NSNotFound || !string.length) {
+        NSCharacterSet* set = [NSCharacterSet characterSetWithCharactersInString:validatorAddressConstant1];
+        if ([string rangeOfCharacterFromSet:set].location != NSNotFound || !string.length) {
             return YES;
         }
         else{

@@ -9,10 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ChangeServerViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UITextField *nameServerTextField;
-@property (weak, nonatomic) IBOutlet UITextField *addressServerTextField;
-@property (weak, nonatomic) IBOutlet UILabel *messageLabel;                  //default hide
-@property (nonatomic, strong) NSMutableArray *servers;
 
+@property (strong, nonatomic) NSIndexPath* indexPathForSelectedRow;
 
 @end

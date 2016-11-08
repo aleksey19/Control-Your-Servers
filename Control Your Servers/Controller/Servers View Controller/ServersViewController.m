@@ -45,13 +45,10 @@
 #pragma mark - Actions
 
 - (IBAction)longPressOnTableViewCell:(id)sender {
-    CGPoint p = [self.gestureRecognizer locationInView:self.tableView];
-    
-    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:p];
+    CGPoint point = [self.gestureRecognizer locationInView:self.tableView];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:point];
     if (indexPath) {
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main.storyboard" bundle:nil];
-        ChangeServerViewController *viewController = (ChangeServerViewController*)[storyboard instantiateViewControllerWithIdentifier:@"ChangeServerViewController"];
-        [self presentViewController:viewController animated:YES completion:nil];
+        [self performSegueWithIdentifier:@"ChangeServerSegue" sender:self];
     }
 }
 

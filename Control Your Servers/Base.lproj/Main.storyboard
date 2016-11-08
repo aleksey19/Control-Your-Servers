@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="92" width="375" height="91"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="STr-pp-0pH" id="OJl-5V-4dv">
-                                            <frame key="frameInset" width="342" height="91"/>
+                                            <frame key="frameInset" width="342" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q9a-JA-ZU2">
@@ -82,7 +82,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Add" id="cHT-Wg-1k9">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="70x-hE-asz" kind="show" id="Rxu-ja-eme"/>
+                                <segue destination="70x-hE-asz" kind="show" identifier="" id="Rxu-ja-eme"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="settings" id="hVc-3P-2Wh">
@@ -97,6 +97,7 @@
                         <outlet property="gestureRecognizer" destination="zSY-Gu-epl" id="eVz-HI-QzV"/>
                         <outlet property="segmentedControl" destination="VhC-LE-YEX" id="2Uz-dC-tJl"/>
                         <outlet property="tableView" destination="Zed-hh-njS" id="7eb-Kz-8HR"/>
+                        <segue destination="gwe-pm-bEG" kind="show" identifier="ChangeServerSegue" id="kzt-lT-fcm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -303,7 +304,7 @@
         <!--Change server-->
         <scene sceneID="GMu-Um-Dbc">
             <objects>
-                <viewController storyboardIdentifier="ChangeServerViewController" title="Change server" id="gwe-pm-bEG" customClass="ChangeServerViewController" sceneMemberID="viewController">
+                <viewController title="Change server" id="gwe-pm-bEG" customClass="ChangeServerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xIY-ea-61d"/>
                         <viewControllerLayoutGuide type="bottom" id="WLz-ja-FdI"/>
@@ -368,6 +369,9 @@
                                     <constraint firstAttribute="height" constant="40" id="Cze-0Q-usD"/>
                                 </constraints>
                                 <state key="normal" title="Change"/>
+                                <connections>
+                                    <action selector="changeServerAction:" destination="gwe-pm-bEG" eventType="touchUpInside" id="EWu-TQ-4zL"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -381,10 +385,10 @@
                             <constraint firstItem="tZ6-aN-JGa" firstAttribute="leading" secondItem="Lpk-06-w3W" secondAttribute="leadingMargin" constant="100" id="NYQ-1Y-oRI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tZ6-aN-JGa" secondAttribute="trailing" constant="100" id="NZe-jx-sLk"/>
                             <constraint firstItem="0CD-Bm-jvl" firstAttribute="centerX" secondItem="Lpk-06-w3W" secondAttribute="centerX" id="S6y-Yh-bPs"/>
+                            <constraint firstItem="wr4-2w-Kv9" firstAttribute="top" secondItem="xIY-ea-61d" secondAttribute="bottom" constant="3" id="bxR-pS-XHL"/>
                             <constraint firstItem="wr4-2w-Kv9" firstAttribute="centerX" secondItem="Lpk-06-w3W" secondAttribute="centerX" id="gey-9q-hCh"/>
                             <constraint firstItem="0CD-Bm-jvl" firstAttribute="top" secondItem="piw-2p-iIf" secondAttribute="bottom" constant="5" id="hMq-cm-5RX"/>
                             <constraint firstItem="eew-uF-kdB" firstAttribute="top" secondItem="wr4-2w-Kv9" secondAttribute="bottom" constant="5" id="i8I-qC-KLU"/>
-                            <constraint firstItem="wr4-2w-Kv9" firstAttribute="top" secondItem="xIY-ea-61d" secondAttribute="bottom" constant="3" id="iWJ-lG-ITT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Change server" id="Xmz-Dw-WeR"/>
@@ -396,7 +400,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r5d-T6-HID" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1241" y="914"/>
+            <point key="canvasLocation" x="1241" y="787"/>
         </scene>
     </scenes>
     <resources>
